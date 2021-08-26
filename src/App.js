@@ -3,6 +3,7 @@ import GlobalStyle from './style/GlobalStyles';
 import { theme } from './style/theme';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
           <Routes>
             <Route path='/login' />
             <Route path='/orders' />
+            <Route path='/winter' />
             <Route path='/checkout' />
             <Route path='/payment' />
-            <Route path='/' />
+            <Route path='/' element={<Home />} />
           </Routes>
         </>
       </ThemeProvider>

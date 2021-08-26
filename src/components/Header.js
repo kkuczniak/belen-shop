@@ -7,6 +7,7 @@ const HeaderStyled = styled.header`
   height: 2.75rem;
   display: flex;
   position: relative;
+  border-bottom: 1px solid #000;
 `;
 const LogoStyled = styled.h1`
   width: 9.375rem;
@@ -23,6 +24,7 @@ const LogoStyled = styled.h1`
       display: block;
       left: 0.625rem;
       top: 0.9375rem;
+      z-index: 2;
     }
   }
 `;
@@ -42,7 +44,7 @@ const MenuContainerStyled = styled.div`
   }
   li {
     margin: 0 8px 0;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     list-style: none;
 
