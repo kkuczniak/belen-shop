@@ -5,6 +5,7 @@ import logo from '../images/logo.svg';
 const HeaderStyled = styled.header`
   width: 100%;
   height: 2.75rem;
+  display: flex;
   position: relative;
 `;
 const LogoStyled = styled.h1`
@@ -27,12 +28,36 @@ const LogoStyled = styled.h1`
 `;
 const MenuContainerStyled = styled.div`
   display: flex;
+
+  width: 100%;
   height: 100%;
+  justify-content: space-between;
+  nav {
+    display: flex;
+  }
+  ul {
+    display: flex;
+    margin: 0 20px 0;
+    color: ${({ theme }) => theme.color.fontMenu};
+  }
+  li {
+    margin: 0 8px 0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    list-style: none;
+
+    left: 0.625rem;
+    top: 0.9375rem;
+    padding: 1.0625rem 0.5rem 1.0625rem;
+    display: flex;
+    align-items: center;
+  }
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.color.fontMenu};
+  }
 `;
-const Demo = styled.div`
-  background-color: aqua;
-  height: 100vh;
-`;
+
 function Header() {
   return (
     <>
@@ -42,12 +67,26 @@ function Header() {
             <img src={logo} alt='' />
           </Link>
         </LogoStyled>
-        <MenuContainerStyled></MenuContainerStyled>
+
+        <MenuContainerStyled>
+          <nav>
+            <ul>
+              <li>Women</li>
+              <li>Men</li>
+              <li>Explore</li>
+            </ul>
+          </nav>
+          <nav>
+            <ul>
+              <li>Poland</li>
+              <li>Client Service</li>
+              <li>
+                <Link to='/login'>Log In</Link>
+              </li>
+            </ul>
+          </nav>
+        </MenuContainerStyled>
       </HeaderStyled>
-      <Demo />
-      <Demo />
-      <Demo />
-      <Demo />
     </>
   );
 }

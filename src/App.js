@@ -12,11 +12,11 @@ function App() {
           <GlobalStyle />
           <Header />
           <Routes>
-            <Route path='/' />
             <Route path='/login' />
             <Route path='/orders' />
             <Route path='/checkout' />
             <Route path='/payment' />
+            <Route path='/' />
           </Routes>
         </>
       </ThemeProvider>
