@@ -9,7 +9,7 @@ const ProductCardWrapper = styled.ul`
   background: #f5f5f5;
 `;
 
-export default function WinterPage() {
+export default function WomenPage() {
   return (
     <ProductCardWrapper>
       <ProductCard

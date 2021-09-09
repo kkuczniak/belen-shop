@@ -73,9 +73,15 @@ function Header() {
         <MenuContainerStyled>
           <nav>
             <ul>
-              <li>Women</li>
-              <li>Men</li>
-              <li>Explore</li>
+              <li>
+                <Link to='/women'>Women</Link>
+              </li>
+              <li>
+                <Link to='/men'>Men</Link>
+              </li>
+              <li>
+                <Link to='/winter'>New Collection</Link>
+              </li>
             </ul>
           </nav>
           <nav>
