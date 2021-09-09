@@ -61,4 +61,5 @@ ProductCard.propTypes = {
   price: PropTypes.number,
   image: PropTypes.string,
   size: PropTypes.string,
+  id: PropTypes.number,
 };

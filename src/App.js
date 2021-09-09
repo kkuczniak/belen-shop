@@ -8,6 +8,7 @@ import Login from './components/Login';
 import MenPage from './pages/MenPage';
 import WomenPage from './pages/WomenPage';
 import WinterPage from './pages/WinterPage';
+import DetailsPage from './pages/DetailsPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path='/winter' element={<WinterPage />} />
             <Route path='/men' element={<MenPage />} />
             <Route path='/women' element={<WomenPage />} />
+            <Route path='/details' element={<DetailsPage />} />
             <Route path='/checkout' />
             <Route path='/payment' />
             <Route path='/' element={<Home />} />

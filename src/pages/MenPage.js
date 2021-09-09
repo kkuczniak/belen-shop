@@ -17,6 +17,7 @@ export default function MenPage() {
         image={hoodFront}
         price={1245}
         size='L'
+        id={1}
       />
       <ProductCard
         name='hood Black est. 1917'
