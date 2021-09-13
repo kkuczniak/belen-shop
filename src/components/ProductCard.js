@@ -5,7 +5,7 @@ const ProductCardContainer = styled.li`
   border: 1px solid #000;
   border-top: none;
   border-left: none;
-  width: 25%;
+  /* width: 25%; */
   /* height: 35.625rem; */
   display: flex;
   flex-direction: column;
@@ -39,11 +39,11 @@ const ProductCardImage = styled.div`
   }
 `;
 
-export default function ProductCard({ name, price, image, size }) {
+export default function ProductCard({ id, title, price, image, size }) {
   return (
-    <ProductCardContainer>
+    <ProductCardContainer id={id}>
       <ProductCardInfosTop>
-        <h2>{name}</h2>
+        <h2>{title}</h2>
         <p>{price} €</p>
       </ProductCardInfosTop>
       <ProductCardImage>
@@ -57,9 +57,9 @@ export default function ProductCard({ name, price, image, size }) {
 }
 
 ProductCard.propTypes = {
-  name: PropTypes.string,
+  title: PropTypes.string,
   price: PropTypes.number,
   image: PropTypes.string,
   size: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.string,
 };

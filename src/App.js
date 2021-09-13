@@ -23,7 +23,7 @@ function App() {
             <Route path='/winter' element={<WinterPage />} />
             <Route path='/men' element={<MenPage />} />
             <Route path='/women' element={<WomenPage />} />
-            <Route path='/details' element={<DetailsPage />} />
+            <Route path='/details/:id' element={<DetailsPage />} />
             <Route path='/checkout' />
             <Route path='/payment' />
             <Route path='/' element={<Home />} />
