@@ -32,6 +32,15 @@ const CheckoutProductMainInfo = styled.div`
     margin-bottom: 0.5rem;
   }
 `;
+const CheckoutProductDeleteButton = styled.button`
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  background: inherit;
+  margin: 5px 5px 0 0;
+  border: none;
+  cursor: pointer;
+`;
 
 export default function CheckoutProduct({
   id,
@@ -61,7 +70,11 @@ export default function CheckoutProduct({
         <p>{price} €</p>
         <p>{id}</p>
       </CheckoutProductMainInfo>
-      {!hideButton && <button onClick={removeFromBasket}>X</button>}
+      {!hideButton && (
+        <CheckoutProductDeleteButton onClick={removeFromBasket}>
+          ╳
+        </CheckoutProductDeleteButton>
+      )}
     </CheckoutProductContainer>
   );
 }

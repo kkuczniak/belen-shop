@@ -10,6 +10,7 @@ import WomenPage from './pages/WomenPage';
 import WinterPage from './pages/WinterPage';
 import DetailsPage from './pages/DetailsPage';
 import CheckoutPage from './pages/CheckoutPage';
+import PaymentPage from './pages/PaymentPage';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
             <Route path='/women' element={<WomenPage />} />
             <Route path='/details/:id' element={<DetailsPage />} />
             <Route path='/checkout' element={<CheckoutPage />} />
-            <Route path='/payment' />
+            <Route path='/payment' element={<PaymentPage />} />
             <Route path='/' element={<Home />} />
           </Routes>
         </>
