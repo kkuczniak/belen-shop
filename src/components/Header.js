@@ -91,6 +91,9 @@ function Header() {
               <li>
                 <Link to='/login'>Log In</Link>
               </li>
+              <li>
+                <Link to='/checkout'>View Basket</Link>
+              </li>
             </ul>
           </nav>
         </MenuContainerStyled>
