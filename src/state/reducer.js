@@ -68,6 +68,14 @@ export const initialState = {
         'https://balenciaga.dam.kering.com/m/6c23b292539cbb6e/Small-578135TIV531070_D.jpg?v=3',
       size: 'L',
     },
+    {
+      id: '9',
+      title: 'Hoodie',
+      price: 1400,
+      image:
+        'https://balenciaga.dam.kering.com/m/6c23b292539cbb6e/Small-578135TIV531070_D.jpg?v=3',
+      size: 'L',
+    },
   ],
 };
 
@@ -96,7 +104,10 @@ const reducer = (state, action) => {
     case actions.EMPTY_BASKET:
       return {};
     case actions.SET_USER:
-      return {};
+      return {
+        ...state,
+        user: action.user,
+      };
     default:
       return state;
   }

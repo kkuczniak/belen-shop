@@ -1,9 +1,7 @@
-/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
-import { Link } from 'react-router-dom';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -15,6 +13,7 @@ const LoginContainer = styled.div`
   border-left: 1px solid #000;
   border-right: 1px solid #000;
 `;
+
 const LoginWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -63,36 +62,21 @@ const LoginWrapper = styled.div`
     height: 30px;
     cursor: pointer;
   }
-  a {
-    margin: 30px 0 30px;
-    display: flex;
-    width: 40%;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    text-decoration: none;
-    color: #000;
-    background: ${({ theme }) => theme.color.buttonGreen};
-    border: none;
-    letter-spacing: 0.1rem;
-    font-weight: bold;
-    height: 30px;
-    cursor: pointer;
-  }
 `;
 
-export default function Login() {
+export default function Register() {
   const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  const signIn = (e) => {
+  const register = (e) => {
     e.preventDefault();
-
     auth
-      .signInWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
-        navigate('/');
+        if (auth) {
+          navigate('/');
+        }
       })
       .catch((error) => alert(error.message));
   };
@@ -100,11 +84,11 @@ export default function Login() {
   return (
     <LoginContainer>
       <LoginWrapper>
-        <h4>Login</h4>
+        <h4>Register</h4>
       </LoginWrapper>
       <LoginWrapper>
-        <h5>returning customer</h5>
-        <p>If you are already registered, please log in.</p>
+        <h5>I&apos;m a new customer</h5>
+        <p>Create an account</p>
         <form>
           <h6>E-mail</h6>
           <input
@@ -118,19 +102,10 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button onClick={signIn} type='submit'>
-            Sign In
+          <button onClick={register} type='submit'>
+            Register
           </button>
         </form>
-      </LoginWrapper>
-      <LoginWrapper>
-        <h5>I&apos;m a new customer</h5>
-        <p>Create an account for access to :</p>
-        <li>Order delivery updates and return management.</li>
-        <li>Personalized recommendations.</li>
-        <li> Save items in your Wish List.</li>
-
-        <Link to='/register'>Register</Link>
       </LoginWrapper>
     </LoginContainer>
   );

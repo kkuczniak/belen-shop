@@ -49,7 +49,7 @@ const CheckoutProductSummaryCost = styled.div`
     letter-spacing: 0.1rem;
     border-left: 1px solid #000;
     border-top: 1px solid;
-    background: #44db5e;
+    background: ${({ theme }) => theme.color.buttonGreen};
     top: 0.6rem;
     height: 2.5rem;
     text-align: center;

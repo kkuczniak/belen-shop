@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.svg';
+import { useStateValue } from '../state/StateProvider';
+import { auth } from '../firebase';
 
 const HeaderStyled = styled.header`
   width: 100%;
@@ -61,6 +63,14 @@ const MenuContainerStyled = styled.div`
 `;
 
 function Header() {
+  // eslint-disable-next-line no-unused-vars
+  const [{ user }, dispatch] = useStateValue();
+
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
   return (
     <>
       <HeaderStyled>
@@ -89,7 +99,11 @@ function Header() {
               <li>Poland</li>
               <li>Client Service</li>
               <li>
-                <Link to='/login'>Log In</Link>
+                <Link to={!user && '/login'}>
+                  <div onClick={handleAuthentication}>
+                    {!user ? 'Log In' : 'Sing out'}
+                  </div>
+                </Link>
               </li>
               <li>
                 <Link to='/checkout'>View Basket</Link>

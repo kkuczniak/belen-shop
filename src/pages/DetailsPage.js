@@ -52,7 +52,7 @@ const DetailsProductPrice = styled.div`
 // add button
 const DetailsProductAddButton = styled.button`
   width: 50%;
-  background: #44db5e;
+  background: ${({ theme }) => theme.color.buttonGreen};
   text-transform: uppercase;
   font-weight: bold;
   border: none;

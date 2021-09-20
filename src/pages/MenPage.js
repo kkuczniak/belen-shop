@@ -1,6 +1,5 @@
 import ProductCard from '../components/ProductCard';
 import styled from 'styled-components';
-// import { productData } from '../data/productData';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../state/StateProvider';
 

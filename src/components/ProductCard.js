@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const ProductCardContainer = styled.li`
   border: 1px solid #000;
+  height: 100%;
   border-top: none;
   border-left: none;
   /* width: 25%; */
