@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import { useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './style/GlobalStyles';
@@ -16,6 +18,12 @@ import PaymentPage from './pages/PaymentPage';
 import { auth } from './firebase';
 import actions from './state/actions';
 import { useStateValue } from './state/StateProvider';
+import { loadStripe } from '@stripe/stripe-js';
+import { Element, Elements } from '@stripe/react-stripe-js';
+
+const stripePromise = loadStripe(
+  'pk_test_51JblwLGcgWhBsiYxaskujEc0AJfTvPVi1fN4WX5UZ90T6CMrHNhFfKQ2gskbhQEYsL6Rs7pG6zlMThKppNVcluim00sBYzFtdw'
+);
 
 function App() {
   // eslint-disable-next-line no-empty-pattern
@@ -52,7 +60,14 @@ function App() {
             <Route path='/women' element={<WomenPage />} />
             <Route path='/details/:id' element={<DetailsPage />} />
             <Route path='/checkout' element={<CheckoutPage />} />
-            <Route path='/payment' element={<PaymentPage />} />
+            <Route
+              path='/payment'
+              element={
+                <Elements stripe={stripePromise}>
+                  <PaymentPage />
+                </Elements>
+              }
+            />
             <Route path='/' element={<Home />} />
           </Routes>
         </>
